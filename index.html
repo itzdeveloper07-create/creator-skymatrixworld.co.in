@@ -111,7 +111,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 140px 20px; /* मोबाइल पर सांस लेने की जगह बढ़ाई */
+            padding: 120px 20px;
             position: relative;
             width: 100%;
         }
@@ -157,7 +157,7 @@
         #identity-spectrum {
             background-color: #04020a;
             border-top: 1px solid rgba(0, 255, 102, 0.05);
-            padding: 100px 20px; /* पैडिंग को थोड़ा बढ़ाया */
+            padding: 80px 20px;
             min-height: auto;
         }
 
@@ -169,7 +169,7 @@
             background: linear-gradient(90deg, #00ff66, #ffffff, #ff007a, #ffff00, #00f0ff, #ff00ea);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .spectrum-title {
@@ -178,7 +178,7 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             color: #ffffff;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .spectrum-full-name {
@@ -212,7 +212,7 @@
         .photo-column-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 40px; /* दोनों फोटो के बीच स्पेस बढ़ाया */
+            gap: 30px;
             width: 100%;
         }
 
@@ -245,48 +245,46 @@
             text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
         }
 
-        /* ⚡ डेटा बॉक्स (प्रोफेशनल स्पेसिंग फिक्स) */
+        /* 🧠 न्यूली डिज़ाइन किया हुआ सुपर प्रोफेशनल मिनिमलिस्ट डेटा पैनल (Image 1709e328 मैच) */
         .intelligence-data-panel {
-            background: rgba(6, 12, 10, 0.3);
-            border: 1px solid rgba(0, 255, 102, 0.15);
-            padding: 40px; /* अंदर की स्पेसिंग बढ़ाई */
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            background: transparent;
+            padding: 10px 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px; /* हर रो के बीच गैप सेट किया ताकि खिचड़ी न लगे */
+            gap: 24px;
         }
 
         .data-node-row {
-            padding: 16px 0;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-            font-size: 1.1rem;
-            font-weight: 600;
-            line-height: 1.7;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .data-node-row:last-child {
+            padding: 0;
             border-bottom: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
-        .data-node-row strong {
-            color: #00ff66;
+        /* बारीक अक्षरों में ग्रे लेबल हेडिंग */
+        .data-node-row .label-text {
+            font-size: 0.72rem;
+            color: #79718a;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            font-weight: 800;
-            margin-right: 8px;
-            text-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
-            display: inline-block; /* मोबाइल पर हेडर को साफ़ दिखाने के लिए */
+            font-weight: 700;
+        }
+
+        /* क्लीन, साफ़ वाइट और बोल्ड वैल्यू टेक्स्ट */
+        .data-node-row .value-text {
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #ffffff;
+            letter-spacing: 0.3px;
         }
 
         /* 📝 Glowing Bubble Box Article Section */
         #biography-essay {
             background-color: #05030e;
             border-top: 1px solid rgba(0, 255, 102, 0.05);
-            padding-top: 100px;
-            padding-bottom: 120px;
+            padding-bottom: 100px;
         }
 
         .essay-bubble-box {
@@ -294,21 +292,21 @@
             width: 100%;
             background: rgba(8, 16, 13, 0.6);
             border: 1px solid #00ff66;
-            padding: 50px;
+            padding: 45px;
             border-radius: 24px;
             box-shadow: 0 0 35px rgba(0, 255, 102, 0.15), inset 0 0 20px rgba(0, 255, 102, 0.05);
             text-align: left;
         }
 
         .essay-title {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #00ff66;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             border-bottom: 1px solid rgba(0, 255, 102, 0.2);
-            padding-bottom: 15px;
+            padding-bottom: 12px;
             text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
         }
 
@@ -316,7 +314,7 @@
             font-size: 1.15rem;
             line-height: 1.9;
             color: #cbbfdc;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             text-align: justify;
         }
 
@@ -359,16 +357,14 @@
         }
 
         @media (max-width: 768px) {
-            section { padding: 100px 20px; } /* मोबाइल सेक्शन गैप फिक्स */
             .node-header { padding: 16px 24px; }
             .matrix-title-main { font-size: 2.6rem; letter-spacing: 3px; }
             .spectrum-title { font-size: 1.8rem; }
             .spectrum-badge { font-size: 1.1rem; }
-            .essay-bubble-box { padding: 35px 24px; border-radius: 16px; }
+            .essay-bubble-box { padding: 25px 20px; border-radius: 16px; }
             .essay-content-text { font-size: 1.05rem; line-height: 1.8; text-align: left; }
-            .intelligence-data-panel { padding: 25px 20px; gap: 15px; } /* डेटा रो के बीच खिचड़ी ख़त्म */
-            .data-node-row { font-size: 1rem; padding: 12px 0; }
-            .data-node-row strong { display: block; margin-bottom: 4px; } /* हेडर को ऊपर किया ताकि टेक्स्ट नीचे साफ़ दिखे */
+            .intelligence-data-panel { padding: 10px 0px; gap: 20px; }
+            .data-node-row .value-text { font-size: 1.05rem; }
         }
     </style>
 </head>
@@ -400,7 +396,7 @@
     <section id="profile-core">
         <div class="profile-grid-container">
             
-            <!-- Left Column wrapper: दोनों फोटो को होल्ड करेगा -->
+            <!-- Left Column wrapper: दोनों फोटो फ्रेम एक्टिव रहेंगे -->
             <div class="photo-column-wrapper">
                 
                 <!-- Photo Node 1 (Top Image) -->
@@ -417,17 +413,54 @@
 
             </div>
 
-            <!-- Right Node: Intelligence Verified Data Sheet -->
+            <!-- Right Node: साफ़ और एलीट डोसियर टेक्स्ट लेआउट (Image 1709e328 फिक्स) -->
             <div class="intelligence-data-panel scroll-reveal">
-                <div class="data-node-row"><strong>Current Location:</strong> Shree Sonawane is currently living in NASHIK, MAHARASHTRA.</div>
-                <div class="data-node-row"><strong>Current Age:</strong> Shree Sonawane's age is 15 YEARS OLD.</div>
-                <div class="data-node-row"><strong>FATHER'S NAME:</strong> Shree Sonawane's father's name is SANJAY SONAWANE.</div>
-                <div class="data-node-row"><strong>FULL NAME:</strong> Shree Sonawane's full name is SHREE SANJAY SONAWANE.</div>
-                <div class="data-node-row"><strong>BIRTH PLACE:</strong> Shree Sonawane's birth place is BHUSAWAL JALGAON.</div>
-                <div class="data-node-row"><strong>MOTHER'S NAME:</strong> Shree Sonawane's mother's name is SUREKHA SANJAY SONAWANE.</div>
-                <div class="data-node-row"><strong>MOTHER TONGUE:</strong> Shree Sonawane's mother tongue is MARATHI.</div>
-                <div class="data-node-row"><strong>SCHOOL DETAILS:</strong> Shree Sonawane is currently studying in ST. FRANCIS HIGH SCHOOL, NASHIK, MAHARASHTRA.</div>
-                <div class="data-node-row"><strong>SCHOOL ADDRESS:</strong> Shree Sonawane's school's address is CHETNA NAGAR, RANE NAGAR, NASHIK, MAHARASHTRA.</div>
+                
+                <div class="data-node-row">
+                    <span class="label-text">Full Name</span>
+                    <span class="value-text">Shree Sanjay Sonawane</span>
+                </div>
+
+                <div class="data-node-row">
+                    <span class="label-text">Current Location</span>
+                    <span class="value-text">Nashik, Maharashtra</span>
+                </div>
+
+                <div class="data-node-row">
+                    <span class="label-text">Age Parameters</span>
+                    <span class="value-text">15 Years</span>
+                </div>
+
+                <div class="data-node-row">
+                    <span class="label-text">Academic Institution</span>
+                    <span class="value-text">St. Francis High School, Nashik</span>
+                </div>
+
+                <div class="data-node-row">
+                    <span class="label-text">Origin Coordinates</span>
+                    <span class="value-text">Bhusawal, Jalgaon</span>
+                </div>
+
+                <div class="data-node-row">
+                    <span class="label-text">Father's Name</span>
+                    <span class="value-text">Sanjay Sonawane</span>
+                </div>
+
+                <div class="data-node-row">
+                    <span class="label-text">Mother's Name</span>
+                    <span class="value-text">Surekha Sanjay Sonawane</span>
+                </div>
+
+                <div class="data-node-row">
+                    <span class="label-text">Mother Tongue</span>
+                    <span class="value-text">Marathi</span>
+                </div>
+
+                <div class="data-node-row">
+                    <span class="label-text">School Address</span>
+                    <span class="value-text">Chetna Nagar, Rane Nagar, Nashik, Maharashtra</span>
+                </div>
+
             </div>
 
         </div>
