@@ -59,7 +59,7 @@
             pointer-events: none;
         }
 
-        /* 🌐 Node Header */
+        /* 🌐 अपग्रेडेड सेंटर्ड नोडर हेडर */
         .node-header {
             position: fixed;
             top: 0;
@@ -69,40 +69,24 @@
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0, 255, 102, 0.1);
             z-index: 1000;
-            padding: 20px 40px;
+            padding: 18px 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* बिल्कुल सेंटर में अलाइन करने के लिए */
             align-items: center;
-        }
-
-        .back-gateway-btn {
-            color: #8f88a0;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .back-gateway-btn:hover {
-            color: #00ff66;
-            text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
         }
 
         .node-status {
             font-size: 0.8rem;
             font-weight: 700;
             color: #00ff66;
-            background: rgba(0, 255, 102, 0.08);
+            background: rgba(0, 255, 102, 0.05);
             border: 1px solid rgba(0, 255, 102, 0.2);
-            padding: 6px 14px;
-            border-radius: 4px;
-            letter-spacing: 1px;
+            padding: 8px 20px;
+            border-radius: 6px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.05);
+            text-align: center;
         }
 
         section {
@@ -245,7 +229,7 @@
             text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
         }
 
-        /* 🧠 न्यूली डिज़ाइन किया हुआ सुपर प्रोफेशनल मिनिमलिस्ट डेटा पैनल (Image 1709e328 मैच) */
+        /* 🧠 प्रोफेशनल मिनिमलिस्ट डेटा पैनल */
         .intelligence-data-panel {
             background: transparent;
             padding: 10px 20px;
@@ -262,7 +246,6 @@
             gap: 6px;
         }
 
-        /* बारीक अक्षरों में ग्रे लेबल हेडिंग */
         .data-node-row .label-text {
             font-size: 0.72rem;
             color: #79718a;
@@ -271,7 +254,6 @@
             font-weight: 700;
         }
 
-        /* क्लीन, साफ़ वाइट और बोल्ड वैल्यू टेक्स्ट */
         .data-node-row .value-text {
             font-size: 1.15rem;
             font-weight: 600;
@@ -357,7 +339,8 @@
         }
 
         @media (max-width: 768px) {
-            .node-header { padding: 16px 24px; }
+            .node-header { padding: 14px 16px; }
+            .node-status { font-size: 0.75rem; padding: 6px 14px; }
             .matrix-title-main { font-size: 2.6rem; letter-spacing: 3px; }
             .spectrum-title { font-size: 1.8rem; }
             .spectrum-badge { font-size: 1.1rem; }
@@ -373,10 +356,9 @@
     <div class="background-stars" id="starBg"></div>
     <div class="kinetic-grid"></div>
 
-    <!-- 🌐 Node Header -->
+    <!-- 🌐 अपग्रेडेड और सेंटर्ड नोड हेडर -->
     <header class="node-header">
-        <a href="https://skymatrixworld.co.in" class="back-gateway-btn">&larr; Return To Gateway</a>
-        <div class="node-status">Ecosystem Architect // Secured</div>
+        <div class="node-status">SKY MATRIX WORLD // FOUNDER NODE</div>
     </header>
 
     <!-- 👑 Core Identity Matrix (Section 1) -->
@@ -396,7 +378,7 @@
     <section id="profile-core">
         <div class="profile-grid-container">
             
-            <!-- Left Column wrapper: दोनों फोटो फ्रेम एक्टिव रहेंगे -->
+            <!-- Left Column wrapper -->
             <div class="photo-column-wrapper">
                 
                 <!-- Photo Node 1 (Top Image) -->
@@ -413,7 +395,7 @@
 
             </div>
 
-            <!-- Right Node: साफ़ और एलीट डोसियर टेक्स्ट लेआउट (Image 1709e328 फिक्स) -->
+            <!-- Right Node: साफ़ और एलीट डोसियर टेक्स्ट लेआउट -->
             <div class="intelligence-data-panel scroll-reveal">
                 
                 <div class="data-node-row">
