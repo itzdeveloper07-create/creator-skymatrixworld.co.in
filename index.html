@@ -1,71 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="../logo.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Shree Sonawane | Executive Profile</title>
+    <title>Shree Sonawane - Executive Intelligence Profile</title>
+    
     <style>
-        :root { --neon: #00ff66; --bg: #030107; }
-        body { background: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
-
-        /* Minimal Header */
-        .header { padding: 20px; text-align: center; border-bottom: 1px solid #1a1a1a; }
-        .title { font-size: 1.5rem; color: var(--neon); letter-spacing: 2px; text-transform: uppercase; }
-
-        /* Dossier Box */
-        .dossier { 
-            max-width: 500px; 
-            margin: 20px auto; 
-            padding: 25px; 
-            background: #0a0a0a; 
-            border: 1px solid #1a1a1a; 
-            border-radius: 12px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
-        .data-item { margin-bottom: 20px; border-bottom: 1px solid #111; padding-bottom: 15px; }
-        .label { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
-        .value { font-size: 0.95rem; font-weight: 500; color: #eee; }
+        body {
+            background-color: #030107;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+            width: 100%;
+        }
 
-        .image-container { max-width: 500px; margin: 0 auto 20px; border-radius: 12px; overflow: hidden; border: 1px solid #222; }
-        img { width: 100%; display: block; }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030107;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00ff66, #00f0ff);
+            border-radius: 10px;
+        }
 
-        .footer { text-align: center; font-size: 0.7rem; color: #333; padding: 40px; }
+        .background-stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: radial-gradient(white, rgba(255,255,255,.05) 1px, transparent 30px);
+            background-size: 250px 250px;
+            opacity: 0.2;
+            z-index: -2;
+        }
+
+        .kinetic-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 102, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 102, 0.015) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* 🌐 Node Header */
+        .node-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(3, 1, 7, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 255, 102, 0.1);
+            z-index: 1000;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-gateway-btn {
+            color: #8f88a0;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-gateway-btn:hover {
+            color: #00ff66;
+            text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+        }
+
+        .node-status {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #00ff66;
+            background: rgba(0, 255, 102, 0.08);
+            border: 1px solid rgba(0, 255, 102, 0.2);
+            padding: 6px 14px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 20px; /* मोबाइल पर सांस लेने की जगह बढ़ाई */
+            position: relative;
+            width: 100%;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 👑 Identity Section 1 */
+        #identity-matrix {
+            text-align: center;
+            background: radial-gradient(circle at center, #061510 0%, #030107 100%);
+        }
+
+        .matrix-badge-green {
+            font-size: 1rem;
+            color: #00ff66;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+        }
+
+        .matrix-title-main {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ffffff, #00ff66, #00f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 👑 Identity Section 2 (Multi-Color Spectrum) */
+        #identity-spectrum {
+            background-color: #04020a;
+            border-top: 1px solid rgba(0, 255, 102, 0.05);
+            padding: 100px 20px; /* पैडिंग को थोड़ा बढ़ाया */
+            min-height: auto;
+        }
+
+        .spectrum-badge {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #00ff66, #ffffff, #ff007a, #ffff00, #00f0ff, #ff00ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .spectrum-title {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .spectrum-full-name {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8a7f9f;
+        }
+
+        .spectrum-full-name span {
+            color: #00ff66;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(0, 255, 102, 0.3);
+        }
+
+        /* 🖼️ Profile Grid Layout */
+        #profile-core {
+            background-color: #030107;
+            border-top: 1px solid rgba(0, 255, 102, 0.05);
+        }
+
+        .profile-grid-container {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .photo-column-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px; /* दोनों फोटो के बीच स्पेस बढ़ाया */
+            width: 100%;
+        }
+
+        .photo-frame-block {
+            width: 100%;
+            background: rgba(6, 12, 10, 0.5);
+            border: 2px solid #00ff66;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.2);
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .photo-frame-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder-text {
+            color: #00ff66;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+        }
+
+        /* ⚡ डेटा बॉक्स (प्रोफेशनल स्पेसिंग फिक्स) */
+        .intelligence-data-panel {
+            background: rgba(6, 12, 10, 0.3);
+            border: 1px solid rgba(0, 255, 102, 0.15);
+            padding: 40px; /* अंदर की स्पेसिंग बढ़ाई */
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* हर रो के बीच गैप सेट किया ताकि खिचड़ी न लगे */
+        }
+
+        .data-node-row {
+            padding: 16px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.7;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .data-node-row:last-child {
+            border-bottom: none;
+        }
+
+        .data-node-row strong {
+            color: #00ff66;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            margin-right: 8px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+            display: inline-block; /* मोबाइल पर हेडर को साफ़ दिखाने के लिए */
+        }
+
+        /* 📝 Glowing Bubble Box Article Section */
+        #biography-essay {
+            background-color: #05030e;
+            border-top: 1px solid rgba(0, 255, 102, 0.05);
+            padding-top: 100px;
+            padding-bottom: 120px;
+        }
+
+        .essay-bubble-box {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(8, 16, 13, 0.6);
+            border: 1px solid #00ff66;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 0 35px rgba(0, 255, 102, 0.15), inset 0 0 20px rgba(0, 255, 102, 0.05);
+            text-align: left;
+        }
+
+        .essay-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #00ff66;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(0, 255, 102, 0.2);
+            padding-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+        }
+
+        .essay-content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #cbbfdc;
+            margin-bottom: 28px;
+            text-align: justify;
+        }
+
+        .essay-content-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .essay-content-text strong {
+            color: #ffffff;
+            font-weight: 700;
+            border-bottom: 1px solid #00ff66;
+        }
+
+        #footer-section {
+            background: #010003;
+            min-height: 20vh;
+            border-top: 1px solid #0a1410;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #4b4563;
+            letter-spacing: 1px;
+        }
+
+        /* 📱 Responsive Engineering Matrix */
+        @media (max-width: 900px) {
+            .profile-grid-container {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+            .photo-column-wrapper {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 100px 20px; } /* मोबाइल सेक्शन गैप फिक्स */
+            .node-header { padding: 16px 24px; }
+            .matrix-title-main { font-size: 2.6rem; letter-spacing: 3px; }
+            .spectrum-title { font-size: 1.8rem; }
+            .spectrum-badge { font-size: 1.1rem; }
+            .essay-bubble-box { padding: 35px 24px; border-radius: 16px; }
+            .essay-content-text { font-size: 1.05rem; line-height: 1.8; text-align: left; }
+            .intelligence-data-panel { padding: 25px 20px; gap: 15px; } /* डेटा रो के बीच खिचड़ी ख़त्म */
+            .data-node-row { font-size: 1rem; padding: 12px 0; }
+            .data-node-row strong { display: block; margin-bottom: 4px; } /* हेडर को ऊपर किया ताकि टेक्स्ट नीचे साफ़ दिखे */
+        }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="title">Founder Identity // Secure</div>
+    <div class="background-stars" id="starBg"></div>
+    <div class="kinetic-grid"></div>
+
+    <!-- 🌐 Node Header -->
+    <header class="node-header">
+        <a href="https://skymatrixworld.co.in" class="back-gateway-btn">&larr; Return To Gateway</a>
+        <div class="node-status">Ecosystem Architect // Secured</div>
     </header>
 
-    <div class="dossier">
-        <!-- Photo Section -->
-        <div class="image-container"><img src="myphoto.jpeg" alt="Profile"></div>
+    <!-- 👑 Core Identity Matrix (Section 1) -->
+    <section id="identity-matrix">
+        <div class="matrix-badge-green scroll-reveal">Chief Ecosystem Architect & Founder</div>
+        <div class="matrix-title-main scroll-reveal">SHREE SONAWANE</div>
+    </section>
 
-        <!-- Data Section -->
-        <div class="data-item">
-            <div class="label">Legal Identity</div>
-            <div class="value">Shree Sanjay Sonawane</div>
-        </div>
-        <div class="data-item">
-            <div class="label">Current Location</div>
-            <div class="value">Nashik, Maharashtra</div>
-        </div>
-        <div class="data-item">
-            <div class="label">Age Parameters</div>
-            <div class="value">15 Years</div>
-        </div>
-        <div class="data-item">
-            <div class="label">Academic Institution</div>
-            <div class="value">St. Francis High School, Nashik</div>
-        </div>
-        <div class="data-item">
-            <div class="label">Origin Coordinates</div>
-            <div class="value">Bhusawal, Jalgaon</div>
-        </div>
-    </div>
+    <!-- 👑 Identity Spectrum Matrix (Section 2) -->
+    <section id="identity-spectrum">
+        <div class="spectrum-badge scroll-reveal">CEO & Founder of Sky Matrix</div>
+        <div class="spectrum-title scroll-reveal">SHREE SONAWANE</div>
+        <div class="spectrum-full-name scroll-reveal">Full Name: <span>SHREE SANJAY SONAWANE</span></div>
+    </section>
 
-    <footer class="footer">SKY MATRIX WORLD // PROPRIETARY</footer>
+    <!-- 🖼 Core Profile Grid Section -->
+    <section id="profile-core">
+        <div class="profile-grid-container">
+            
+            <!-- Left Column wrapper: दोनों फोटो को होल्ड करेगा -->
+            <div class="photo-column-wrapper">
+                
+                <!-- Photo Node 1 (Top Image) -->
+                <div class="photo-frame-block scroll-reveal">
+                    <img src="myphoto.jpeg" alt="Shree Sonawane First" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="photo-placeholder-text" style="display: none;">[ IMAGE NODE 01 ACTIVE ]</div>
+                </div>
 
+                <!-- Photo Node 2 (Bottom Image) -->
+                <div class="photo-frame-block scroll-reveal">
+                    <img src="myphoto2.jpeg" alt="Shree Sonawane Second" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="photo-placeholder-text" style="display: none;">[ IMAGE NODE 02 ACTIVE ]</div>
+                </div>
+
+            </div>
+
+            <!-- Right Node: Intelligence Verified Data Sheet -->
+            <div class="intelligence-data-panel scroll-reveal">
+                <div class="data-node-row"><strong>Current Location:</strong> Shree Sonawane is currently living in NASHIK, MAHARASHTRA.</div>
+                <div class="data-node-row"><strong>Current Age:</strong> Shree Sonawane's age is 15 YEARS OLD.</div>
+                <div class="data-node-row"><strong>FATHER'S NAME:</strong> Shree Sonawane's father's name is SANJAY SONAWANE.</div>
+                <div class="data-node-row"><strong>FULL NAME:</strong> Shree Sonawane's full name is SHREE SANJAY SONAWANE.</div>
+                <div class="data-node-row"><strong>BIRTH PLACE:</strong> Shree Sonawane's birth place is BHUSAWAL JALGAON.</div>
+                <div class="data-node-row"><strong>MOTHER'S NAME:</strong> Shree Sonawane's mother's name is SUREKHA SANJAY SONAWANE.</div>
+                <div class="data-node-row"><strong>MOTHER TONGUE:</strong> Shree Sonawane's mother tongue is MARATHI.</div>
+                <div class="data-node-row"><strong>SCHOOL DETAILS:</strong> Shree Sonawane is currently studying in ST. FRANCIS HIGH SCHOOL, NASHIK, MAHARASHTRA.</div>
+                <div class="data-node-row"><strong>SCHOOL ADDRESS:</strong> Shree Sonawane's school's address is CHETNA NAGAR, RANE NAGAR, NASHIK, MAHARASHTRA.</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 📝 Glowing Bubble Box Article Section -->
+    <section id="biography-essay">
+        <div class="essay-bubble-box scroll-reveal">
+            <h2 class="essay-title">The Sovereign Vision Matrix</h2>
+            
+            <p class="essay-content-text">
+                The technical blueprint of <strong>Sky Matrix World</strong> represents a paradigm shift in decentralized network engineering, conceived and orchestrated entirely by its absolute pioneer, <strong>Shree Sonawane</strong>. Standing as the sole <strong>CEO and Founder</strong> of this emerging multi-tier tech institution, his intellectual architecture operates as the foundational genesis for everything constructed within this digital footprint. Every microservice line, server deployment cluster, and encrypted security gateway running on this ecosystem is a direct manifestation of his original, independent engineering frameworks.
+            </p>
+
+            <p class="essay-content-text">
+                At the core of his executive buildout is the highly anticipated <strong>CYPHER AI</strong> protocol. This advanced system matrix was designed from scratch to serve as a high-tier intelligence layer capable of unifying extreme frontend aesthetics with complex backend database parameters. Unlike conventional industry structures, Shree Sonawane engineered this multi-subdomain system to ensure zero external technical reliance. The core architecture, structural algorithms, and distributed node directories are entirely unique, establishing an ironclad layer of pure corporate ownership that remains impervious to copyright infringements.
+            </p>
+
+            <p class="essay-content-text">
+                This independent technological breakthrough belongs entirely to the proprietary network logs of its founder. Sky Matrix World stands as a testament to single-minded visionary development, ensuring that every connected sub-node—from interface matrices to developer documentation pools—syncs directly back to the corporate command center overseen by Shree Sonawane. The ecosystem stands securely live, operating with full technological autonomy, pioneering the next tier of decentralized AI protocol implementations with a 100% original, uncompromised structural blueprint.
+            </p>
+        </div>
+    </section>
+
+    <!-- Legal Footer -->
+    <section id="footer-section">
+        <div class="copyright">&copy; 2026 SKY MATRIX WORLD // CORE IDENTITY MATRIX NO. 001</div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const starBg = document.getElementById("starBg");
+            const revealElements = document.querySelectorAll(".scroll-reveal");
+
+            // Background Parallax
+            window.addEventListener("scroll", function() {
+                let scrollPos = window.pageYOffset;
+                starBg.style.transform = "translateY(" + (scrollPos * 0.2) + "px)";
+            }, { passive: true });
+
+            // Scroll Reveal Logic
+            const elementObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { root: null, margin: "0px", threshold: 0.05 });
+
+            revealElements.forEach(element => { elementObserver.observe(element); });
+        });
+    </script>
 </body>
 </html>
