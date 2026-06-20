@@ -59,7 +59,7 @@
             pointer-events: none;
         }
 
-        /* 🌐 अपग्रेडेड सेंटर्ड नोडर हेडर */
+        /* 🌐 सेंटर्ड नोड हेडर */
         .node-header {
             position: fixed;
             top: 0;
@@ -71,7 +71,7 @@
             z-index: 1000;
             padding: 18px 20px;
             display: flex;
-            justify-content: center; /* बिल्कुल सेंटर में अलाइन करने के लिए */
+            justify-content: center;
             align-items: center;
         }
 
@@ -137,12 +137,17 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* 👑 Identity Section 2 (Multi-Color Spectrum) */
+        /* 👑 Identity Section 2 (परफेक्टली सेंटर्ड और बैलेंस्ड - Image 1000009754_2 फिक्स) */
         #identity-spectrum {
             background-color: #04020a;
             border-top: 1px solid rgba(0, 255, 102, 0.05);
-            padding: 80px 20px;
+            padding: 100px 20px;
             min-height: auto;
+            text-align: center; /* पूरा टेक्स्ट ब्लॉक बीच में अलाइन करने के लिए */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .spectrum-badge {
@@ -154,6 +159,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .spectrum-title {
@@ -163,6 +169,7 @@
             text-transform: uppercase;
             color: #ffffff;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .spectrum-full-name {
@@ -170,6 +177,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #8a7f9f;
+            text-align: center;
         }
 
         .spectrum-full-name span {
@@ -342,8 +350,9 @@
             .node-header { padding: 14px 16px; }
             .node-status { font-size: 0.75rem; padding: 6px 14px; }
             .matrix-title-main { font-size: 2.6rem; letter-spacing: 3px; }
-            .spectrum-title { font-size: 1.8rem; }
-            .spectrum-badge { font-size: 1.1rem; }
+            .spectrum-title { font-size: 1.8rem; margin-bottom: 15px; }
+            .spectrum-badge { font-size: 1.05rem; margin-bottom: 12px; line-height: 1.4; }
+            .spectrum-full-name { font-size: 1rem; }
             .essay-bubble-box { padding: 25px 20px; border-radius: 16px; }
             .essay-content-text { font-size: 1.05rem; line-height: 1.8; text-align: left; }
             .intelligence-data-panel { padding: 10px 0px; gap: 20px; }
@@ -356,7 +365,7 @@
     <div class="background-stars" id="starBg"></div>
     <div class="kinetic-grid"></div>
 
-    <!-- 🌐 अपग्रेडेड और सेंटर्ड नोड हेडर -->
+    <!-- 🌐 परफेक्टली सेंटर्ड नोड हेडर -->
     <header class="node-header">
         <div class="node-status">SKY MATRIX WORLD // FOUNDER NODE</div>
     </header>
@@ -367,7 +376,7 @@
         <div class="matrix-title-main scroll-reveal">SHREE SONAWANE</div>
     </section>
 
-    <!-- 👑 Identity Spectrum Matrix (Section 2) -->
+    <!-- 👑 Identity Spectrum Matrix (Section 2 - मोबाइल अलाइनमेंट फिक्स्ड) -->
     <section id="identity-spectrum">
         <div class="spectrum-badge scroll-reveal">CEO & Founder of Sky Matrix</div>
         <div class="spectrum-title scroll-reveal">SHREE SONAWANE</div>
